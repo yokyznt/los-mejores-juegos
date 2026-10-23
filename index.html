@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GameHub | Los mejores juegos de 2024</title>
+<meta name="description" content="Los títulos que marcaron el 2024: Astro Bot, Balatro, Helldivers 2, Metaphor, Black Myth: Wukong, Final Fantasy VII Rebirth y Donkey Kong Bananza.">
+<meta name="theme-color" content="#050d1a">
+
+<!-- Tipografía (si no hay internet se usa la del sistema, no pasa nada) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<!--
+  ====================================================================
+   GAMEHUB · PÁGINA MENÚ (index.html)
+  ====================================================================
+   Carpetas:
+     index.html          ← esta página (el menú)
+     css/estilos.css     ← estilos
+     js/menu.js          ← menú móvil y buscador
+     js/imagenes.js      ← si falta una imagen en img/, la busca en internet
+     img/                ← aquí van las imágenes en PNG
+
+   1) ENLACES A TUS PÁGINAS
+      Busca los comentarios "EDITA EL ENLACE" y cambia href="#" por la
+      ruta de tu página. Ejemplo:  href="paginas/astro-bot.html"
+      Cada juego aparece DOS veces: una en las franjas diagonales de
+      arriba y otra en la lista "Descubre los mejores juegos".
+
+   2) IMÁGENES
+      La página usa las imágenes de la carpeta img/ (astro-bot.png,
+      balatro.png, etc.). Para tenerlas ahí, haz doble clic en
+      "descargar-imagenes.bat" (necesitas internet solo esa vez).
+      Mientras no estén en la carpeta, la página las carga de internet.
+      Para usar otra imagen tuya, guárdala en img/ con el mismo nombre.
+  ====================================================================
+-->
+<body>
+<div class="site">
+
+  <!-- ============================ MENÚ SUPERIOR ============================ -->
+  <header class="bar">
+    <a class="brand" href="index.html" aria-label="GameHub, inicio">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 6.5h9a5.5 5.5 0 0 1 5.4 4.5l.8 4.8a3 3 0 0 1-5.3 2.4L15.8 16.5H8.2l-1.6 1.7A3 3 0 0 1 1.3 15.8l.8-4.8A5.5 5.5 0 0 1 7.5 6.5Zm.2 3.2v1.5H6.2v1.5h1.5v1.5h1.5v-1.5h1.5v-1.5H9.2V9.7H7.7Zm8.8.3a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Zm2.4 2.4a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z"/></svg>
+      <span class="brand-name">GameHub</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <!-- EDITA EL ENLACE de cada opción del menú -->
+      <a href="index.html" aria-current="page">Inicio</a>
+      <a href="#juegos">Juegos</a>
+    </nav>
+
+    <div class="bar-end">
+      <div class="search" id="search">
+        <input id="q" type="search" placeholder="Buscar juegos" aria-label="Buscar juegos" autocomplete="off">
+        <button class="icon-btn" type="button" id="qbtn" aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+        </button>
+      </div>
+      <button class="icon-btn menu-btn" type="button" id="menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================ PORTADA ============================ -->
+    <section class="hero" aria-labelledby="titulo">
+      <div class="hero-copy">
+        <span class="eyebrow">Lo mejor del año</span>
+        <h1 id="titulo">Los mejores juegos<br>de <span class="yr">2024</span></h1>
+        <p class="lead">Un año increíble para los videojuegos. Aquí te presentamos los títulos que marcaron el 2024 y que no puedes dejar pasar.</p>
+        <a class="btn" href="#juegos">Explorar juegos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <!-- ============ FRANJAS DIAGONALES ============
+           Al pasar el cursor, la franja se agranda. Cada una es un enlace. -->
+      <div class="hero-art">
+        <!-- EDITA EL ENLACE: franja de Astro Bot (imagen: Wikipedia (portada oficial)) -->
+        <a class="slice" href="astro.html" aria-label="Astro Bot">
+          <img src="img/astro-bot.png" data-alt="https://en.wikipedia.org/wiki/Special:FilePath/Astro_Bot_cover_art.jpg?width=900" alt="" width="600" height="900" referrerpolicy="no-referrer">
+          <span class="slice-name">Astro Bot</span>
+        </a>
+
+        <!-- EDITA EL ENLACE: franja de Final Fantasy VII Rebirth (imagen: Steam) -->
+        <a class="slice" href="ff7.html" aria-label="Final Fantasy VII Rebirth">
+          <img src="img/ffvii-rebirth.png" data-alt="https://cdn.akamai.steamstatic.com/steam/apps/2909400/library_600x900.jpg|https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2909400/library_600x900.jpg" alt="" width="600" height="900" referrerpolicy="no-referrer">
+          <span class="slice-name">Final Fantasy VII Rebirth</span>
+        </a>
+
+        <!-- EDITA EL ENLACE: franja de Black Myth: Wukong (imagen: Steam) -->
+        <a class="slice" href="wukong.html" aria-label="Black Myth: Wukong">
+          <img src="img/wukong.png" data-alt="https://cdn.akamai.steamstatic.com/steam/apps/2358720/library_600x900.jpg|https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg" alt="" width="600" height="900" referrerpolicy="no-referrer">
+          <span class="slice-name">Black Myth: Wukong</span>
+        </a>
+
+        <!-- EDITA EL ENLACE: franja de Metaphor: ReFantazio (imagen: Steam) -->
+        <a class="slice" href="metaphor.html" aria-label="Metaphor: ReFantazio">
+          <img src="img/metaphor.png" data-alt="https://cdn.akamai.steamstatic.com/steam/apps/2679460/library_600x900.jpg|https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2679460/library_600x900.jpg" alt="" width="600" height="900" referrerpolicy="no-referrer">
+          <span class="slice-name">Metaphor: ReFantazio</span>
+        </a>
+
+        <!-- EDITA EL ENLACE: franja de Helldivers 2 (imagen: Steam) -->
+        <a class="slice" href="helldivers2.html" aria-label="Helldivers 2">
+          <img src="img/helldivers-2.png" data-alt="https://cdn.akamai.steamstatic.com/steam/apps/553850/library_600x900.jpg|https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/library_600x900.jpg" alt="" width="600" height="900" referrerpolicy="no-referrer">
+          <span class="slice-name">Helldivers 2</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================ LISTA DE JUEGOS ============================ -->
+    <section class="discover" id="juegos" aria-labelledby="descubre">
+      <h2 id="descubre">Descubre los mejores juegos de 2024</h2>
+
+      <!-- (data-nombre es solo para el buscador, no lo borres) -->
+      <ul class="cards" id="cards">
+
+        <li data-nombre="Astro Bot">
+          <!-- EDITA EL ENLACE: Astro Bot (imagen: Wikipedia (portada oficial)) -->
+          <a class="card" href="astro.html">
+            <span class="card-img"><img src="img/astro-bot.png" data-alt="https://en.wikipedia.org/wiki/Special:FilePath/Astro_Bot_cover_art.jpg?width=900" alt="Imagen de Astro Bot" width="600" height="900" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+            <span class="card-name">Astro Bot</span>
+          </a>
+        </li>
+
+        <li data-nombre="Balatro">
+          <!-- EDITA EL ENLACE: Balatro (imagen: Steam) -->
+          <a class="card" href="balatro.html">
+            <span class="card-img"><img src="img/balatro.png" data-alt="https://cdn.akamai.steamstatic.com/steam/apps/2379780/library_600x900.jpg|https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/library_600x900.jpg" alt="Imagen de Balatro" width="600" height="900" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+            <span class="card-name">Balatro</span>
+          </a>
+        </li>
+
+        <li data-nombre="Helldivers 2">
+          <!-- EDITA EL ENLACE: Helldivers 2 (imagen: Steam) -->
+          <a class="card" href="helldivers2.html">
+            <span class="card-img"><img src="img/helldivers-2.png" data-alt="https://cdn.akamai.steamstatic.com/steam/apps/553850/library_600x900.jpg|https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/library_600x900.jpg" alt="Imagen de Helldivers 2" width="600" height="900" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+            <span class="card-name">Helldivers 2</span>
+          </a>
+        </li>
+
+        <li data-nombre="Metaphor ReFantazio">
+          <!-- EDITA EL ENLACE: Metaphor: ReFantazio (imagen: Steam) -->
+          <a class="card" href="metaphor.html">
+            <span class="card-img"><img src="img/metaphor.png" data-alt="https://cdn.akamai.steamstatic.com/steam/apps/2679460/library_600x900.jpg|https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2679460/library_600x900.jpg" alt="Imagen de Metaphor: ReFantazio" width="600" height="900" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+            <span class="card-name">Metaphor</span>
+          </a>
+        </li>
+
+        <li data-nombre="Wukong Black Myth">
+          <!-- EDITA EL ENLACE: Black Myth: Wukong (imagen: Steam) -->
+          <a class="card" href="wukong.html">
+            <span class="card-img"><img src="img/wukong.png" data-alt="https://cdn.akamai.steamstatic.com/steam/apps/2358720/library_600x900.jpg|https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg" alt="Imagen de Black Myth: Wukong" width="600" height="900" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+            <span class="card-name">Wukong</span>
+          </a>
+        </li>
+
+        <li data-nombre="FFVII Final Fantasy Rebirth">
+          <!-- EDITA EL ENLACE: Final Fantasy VII Rebirth (imagen: Steam) -->
+          <a class="card" href="ff7.html">
+            <span class="card-img"><img src="img/ffvii-rebirth.png" data-alt="https://cdn.akamai.steamstatic.com/steam/apps/2909400/library_600x900.jpg|https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2909400/library_600x900.jpg" alt="Imagen de Final Fantasy VII Rebirth" width="600" height="900" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+            <span class="card-name">FFVII Rebirth</span>
+          </a>
+        </li>
+
+        <li data-nombre="Donkey Kong Bananza">
+          <!-- EDITA EL ENLACE: Donkey Kong Bananza (imagen: portada) -->
+          <a class="card card--dk" href="donkeykong.html">
+            <span class="card-img"><img src="img/donkeykong.png" data-alt="https://en.wikipedia.org/wiki/Special:FilePath/Donkey_Kong_Bananza_box_art.jpg?width=900|https://dam.elcorteingles.es/producto/www-001097563508908-00.jpg" alt="Imagen de Donkey Kong Bananza" width="600" height="900" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+            <span class="card-name">Donkey Kong Bananza</span>
+          </a>
+        </li>
+      </ul>
+      <p class="empty" id="empty" hidden>No hay juegos que coincidan con tu búsqueda. Prueba con otro nombre.</p>
+    </section>
+  </main>
+
+  <footer class="foot">GameHub, los mejores juegos de 2024. Los nombres, imágenes y marcas de los juegos pertenecen a sus respectivos dueños.</footer>
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/imagenes.js"></script>
+</body>
+</html>
