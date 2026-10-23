@@ -1,0 +1,19 @@
+{
+  "name": "los-mejores-juegos",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "www": "node -e \"const fs=require('fs');fs.rmSync('www',{recursive:true,force:true});fs.mkdirSync('www');for(const f of fs.readdirSync('.'))if(f.endsWith('.html')||['css','js','img','trailers'].includes(f))fs.cpSync(f,'www/'+f,{recursive:true})\"",
+    "android:sync": "npm run www && npx cap sync android",
+    "android:apk": "npm run android:sync && node build-apk.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.3",
+    "sharp": "^0.35.5"
+  }
+}
